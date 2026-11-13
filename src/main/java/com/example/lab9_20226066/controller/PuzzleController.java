@@ -5,7 +5,7 @@ import com.example.lab9_20226066.Service.PuzzleService;
 
 import java.util.Map;
 
-@RequestMapping(" ")
+@RequestMapping("/api/puzzle ")
 public class PuzzleController {
 
     private final PuzzleService service;
@@ -17,5 +17,13 @@ public class PuzzleController {
     public Map<String, Object> estado(){
         return service.obtenerEstado();
     }
+
+
+    @PostMapping("/iniciar")
+    public Map<String, Object> iniciar(
+            @RequestBody Map<String, Integer> datos){
+        Integer dimension =
+    }
+
 
 }

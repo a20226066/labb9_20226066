@@ -22,7 +22,15 @@ public class PuzzleController {
     @PostMapping("/iniciar")
     public Map<String, Object> iniciar(
             @RequestBody Map<String, Integer> datos){
-        Integer dimension =
+        Integer dimension = datos.get("size");
+
+        if(dimension == null{
+            throw new IllegalArgumentException(
+                    "Debe de indicar la dimensión"
+            );
+        }
+
+        return service.iniciar(dimension);
     }
 
 
